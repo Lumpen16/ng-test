@@ -1,0 +1,21 @@
+<form>
+    <div>
+        <label>First Name</label>
+        <input (change)="changeData('firstName' ,$event)" type="text" [value]="data.firstName"/>
+        <label>Last Name</label>
+        <input (change)="changeData('lastName' ,$event)" type="text" [value]="data.lastName"/>
+        <label>Email</label>
+        <input (change)="changeData('email' ,$event)" type="text" [value]="data.email" />
+    </div>
+    <div class="column_second">
+        <div>
+            <label>
+                is_active
+            </label>
+            <mat-slide-toggle name="toggle" [(ngModel)]="is_active" class="slide"></mat-slide-toggle>
+        </div>
+        
+        <button (click)="save()">Save</button>
+    </div>
+    
+</form>
