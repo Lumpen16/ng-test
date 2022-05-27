@@ -83,20 +83,20 @@ export class ModalComponent implements OnInit {
   //   }
   // } 
 
-  changeValue(event: any) {
-    switch(event.target.name) {
-      case 'firstName': this.form.patchValue({'firstName': event.target.value});break;
-      case 'lastName': this.form.patchValue({'lastName': event.target.value});break;
-      case 'email': this.form.patchValue({'email': event.target.value});break;
-      case 'is_active': this.form.patchValue({'is_active': event.target.value})
-    }
-  }
+  // changeValue(event: any) {
+  //   switch(event.target.name) {
+  //     case 'firstName': this.form.patchValue({'firstName': event.target.value});break;
+  //     case 'lastName': this.form.patchValue({'lastName': event.target.value});break;
+  //     case 'email': this.form.patchValue({'email': event.target.value});break;
+  //     case 'is_active': this.form.patchValue({'is_active': event.target.value})
+  //   }
+  // }
   save() {
     // console.log(this.form)
     // console.log(this.form.getRawValue())
     if (this.form.invalid) {
       if (this.form.controls['email']) {
-        this.snackBar.open('Field email can`t be empty', 'Undo', {duration: 3000})
+        this.snackBar.open('Wrong email`s value', 'Undo', {duration: 3000})
         return
       }
       this.snackBar.open('Max length of fields firstname and lastname is 100 characters', 'Undo', {duration: 3000})
