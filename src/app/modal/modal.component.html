@@ -1,21 +1,23 @@
-<form>
-    <div>
-        <label>First Name</label>
-        <input (change)="changeData('firstName' ,$event)" type="text" [value]="data.firstName"/>
-        <label>Last Name</label>
-        <input (change)="changeData('lastName' ,$event)" type="text" [value]="data.lastName"/>
-        <label>Email</label>
-        <input (change)="changeData('email' ,$event)" type="text" [value]="data.email" />
-    </div>
-    <div class="column_second">
-        <div>
-            <label>
-                is_active
-            </label>
-            <mat-slide-toggle name="toggle" [(ngModel)]="is_active" class="slide"></mat-slide-toggle>
+<form class="container form mt-5 border p-4 rounded" [formGroup]="form" (ngSubmit)="save()">
+    <div class="row">
+        <div class="col container">
+            <label class="row">First Name</label>
+            <input (change)="changeValue($event)" name="firstName" class="row input border mb-1 rounded-1" formControlName="firstName" type="text"  />
+            <label class="row">Last Name</label>
+            <input class="row border mb-1 rounded-1" formControlName="lastName"  type="text"/>
+            <label class="row">Email*</label>
+            <input class="row border rounded-1" formControlName="email" type="text"  />
         </div>
-        
-        <button (click)="save()">Save</button>
+        <div class="column_second col container d-flex flex-column justify-content-between align-items-center">
+            <div class="d-flex flex-column">
+                <label class="">
+                    is_active
+                </label>
+                <mat-slide-toggle class=""  formControlName="is_active" class="slide"></mat-slide-toggle>
+            </div>
+            
+            <button type="submit" class="btn btn-primary  px-3 py-1 shadow align-self-end" (click)="save()">Save</button>
+        </div>
     </div>
     
 </form>

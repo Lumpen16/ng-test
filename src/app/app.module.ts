@@ -15,7 +15,7 @@ import {MatSlideToggleModule} from '@angular/material/slide-toggle';
 import {MatSnackBarModule} from '@angular/material/snack-bar'; 
 
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { AppRoutingModule } from './app-routing.module'
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,11 +27,12 @@ import { ReactiveFormsModule } from '@angular/forms';
     FormsModule,
     BrowserAnimationsModule,
     MatTableModule,
-    MatDialogModule,
+    // MatDialogModule,
     StoreModule.forRoot({users: usersReducer}),
     MatSlideToggleModule,
     MatSnackBarModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
